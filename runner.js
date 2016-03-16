@@ -3,7 +3,7 @@ window.addEventListener("load",function() {
 var Q = window.Q = Quintus()
         .include("Sprites, Scenes, Input, 2D, Anim, Touch, UI")
         .setup({ maximize: false , 
-          width : 1366, height : 480}) //settingan layar  
+          width : 1366, height : 480}) //settingan layar
           //width : 1600, height : 480})
           
         .controls().touch()
@@ -60,7 +60,7 @@ Q.Sprite.extend("Player",{
       this.play("jump_right");
     }
 
-    this.stage.viewport.centerOn(this.p.x + 300, 400 );
+    this.stage.viewport.centerOn(this.p.x + 300, 450 ); //posisi player
 
   }
 });
@@ -159,10 +159,18 @@ Q.load("player.json, player.png, bg.jpg, background-floor.png, crates.png, crate
     Q.compileSheets("player.png","player.json");
     Q.compileSheets("crates.png","crates.json");
     Q.animations("player", {
-      walk_right: { frames: [0,1,2,3,4,5,6,7,8,9,10], rate: 1/15, flip: false, loop: true },
+      //walk_right: { frames: [0,1,2,3,4,5,6,7,8,9,10], rate: 1/15, flip: false, loop: true },
+      //jump_right: { frames: [13], rate: 1/10, flip: false },
+      //stand_right: { frames:[14], rate: 1/10, flip: false },
+      //duck_right: { frames: [15], rate: 1/10, flip: false },
+
+
+      walk_right: { frames: [0,1,2,3,4,5,6,7,8,9,10], rate: 1/10, flip: false, loop: true },
       jump_right: { frames: [13], rate: 1/10, flip: false },
       stand_right: { frames:[14], rate: 1/10, flip: false },
       duck_right: { frames: [15], rate: 1/10, flip: false },
+
+
     });
     Q.stageScene("level1");
   
