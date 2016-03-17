@@ -60,7 +60,7 @@ Q.Sprite.extend("Player",{
       this.play("jump_right");
     }
 
-    this.stage.viewport.centerOn(this.p.x + 300, 450 ); //posisi player
+    this.stage.viewport.centerOn(this.p.x + 400, 450 ); //posisi player
 
   }
 });
@@ -140,8 +140,9 @@ Q.GameObject.extend("BoxThrower",{
 
 Q.scene("level1",function(stage) {
 
-  stage.insert(new Q.Repeater({ asset: "bg.jpg",
-                                speedX: 0.5 }));
+  stage.insert(new Q.Repeater({ asset: "bg.png",
+                                speedX: 0.5,
+                                y: 300}));
 
   stage.insert(new Q.Repeater({ asset: "background-floor.png",
                                 repeatY: false,
@@ -155,7 +156,7 @@ Q.scene("level1",function(stage) {
 
 });
   
-Q.load("player.json, player.png, bg.jpg, background-floor.png, crates.png, crates.json", function() {
+Q.load("player.json, player.png, bg.png, background-floor.png, crates.png, crates.json", function() {
     Q.compileSheets("player.png","player.json");
     Q.compileSheets("crates.png","crates.json");
     Q.animations("player", {
